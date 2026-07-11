@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Offer - Limited Time Only!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <div class="container">
+        <!-- Header with toggles -->
+        <header class="header">
+            <div class="header-left">
+                <h1 class="logo">July Special Offer!</h1>
+            </div>
+            <div class="header-right">
+                <button id="langToggle" class="toggle-btn">🌐 EN/MY</button>
+                <button id="themeToggle" class="toggle-btn">
+                    <svg class="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- FOMO Banner -->
+        <div class="fomo-banner">
+            <div class="countdown-container">
+                <span class="fomo-text" data-en="⚡ OFFER EXPIRES IN:" data-my="⚡ TAWARAN TAMAT DALAM:">⚡ OFFER EXPIRES IN:</span>
+                <div class="countdown" id="countdown">
+                    <span class="time-block"><span id="hours">00</span><span class="label" data-en="HRS" data-my="JAM">HRS</span></span>
+                    <span class="time-block"><span id="minutes">10</span><span class="label" data-en="MIN" data-my="MIN">MIN</span></span>
+                    <span class="time-block"><span id="seconds">00</span><span class="label" data-en="SEC" data-my="SAAT">SEC</span></span>
+                </div>
+            </div>
+            <div class="spots-left">
+                <span class="spots-text" data-en="🔥 Only" data-my="🔥 Hanya">🔥 Only</span>
+                <span class="spots-number" id="spotsCount">47</span>
+                <span class="spots-text" data-en="spots left!" data-my="tempat tinggal!">spots left!</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="hero-section">
+                <h2 class="hero-title" data-en="Don't Miss Out on This Exclusive Opportunity!" data-my="Jangan Terlepas Peluang Eksklusif Ini!">Don't Miss Out on This Exclusive Opportunity!</h2>
+                <p class="hero-subtitle" data-en="Secure your spot now before it's too late. Limited availability!" data-my="Tempat anda sekarang sebelum terlambat. Ketersediaan terhad!">Secure your spot now before it's too late. Limited availability!</p>
+            </div>
+
+            <!-- Form Section -->
+            <form id="leadForm" class="lead-form">
+                <!-- Phone Number -->
+                <div class="form-group">
+                    <label class="form-label" data-en="📱 Phone Number *" data-my="📱 Nombor Telefon *">📱 Phone Number *</label>
+                    <input type="tel" id="phone" class="form-input" placeholder="+60 12-345-6789" required>
+                </div>
+
+                <!-- Gender -->
+                <div class="form-group">
+                    <label class="form-label" data-en="👤 Gender *" data-my="👤 Jantina *">👤 Gender *</label>
+                    <div class="button-group">
+                        <button type="button" class="option-btn" data-field="gender" data-value="male" data-en="Male" data-my="Lelaki">Male</button>
+                        <button type="button" class="option-btn" data-field="gender" data-value="female" data-en="Female" data-my="Perempuan">Female</button>
+                    </div>
+                </div>
+
+                <!-- Smoking Status -->
+                <div class="form-group">
+                    <label class="form-label" data-en="🚬 Do You Smoke? *" data-my="🚬 Adakah Anda Merokok? *">🚬 Do You Smoke? *</label>
+                    <div class="button-group">
+                        <button type="button" class="option-btn" data-field="smoking" data-value="yes" data-en="Yes" data-my="Ya">Yes</button>
+                        <button type="button" class="option-btn" data-field="smoking" data-value="no" data-en="No" data-my="Tidak">No</button>
+                    </div>
+                </div>
+
+                <!-- Occupation Category -->
+                <div class="form-group">
+                    <label class="form-label" data-en="💼 Occupation Type *" data-my="💼 Jenis Pekerjaan *">💼 Occupation Type *</label>
+                    <div class="button-group">
+                        <button type="button" class="option-btn" data-field="occupation" data-value="class1" data-en="Class 1" data-my="Kelas 1">
+                            Class 1
+                            <span class="info-icon" data-info-en="Desk & Office Work - For those who work solely at a desk, in an office, or from home with zero manual labor. (e.g., Accountant, Teacher, Admin, Manager)" data-info-my="Kerja Meja & Pejabat - Untuk mereka yang bekerja sepenuhnya di meja, di pejabat, atau dari rumah tanpa kerja manual. (cth., Akauntan, Guru, Admin, Pengurus)">ℹ️</span>
+                        </button>
+                        <button type="button" class="option-btn" data-field="occupation" data-value="class2" data-en="Class 2" data-my="Kelas 2">
+                            Class 2
+                            <span class="info-icon" data-info-en="Supervisory & On-the-Go - For desk workers who travel often, supervisors, or light hands-on work without heavy machinery. (e.g., Sales Agent, Real Estate Agent, Nurse)" data-info-my="Pengawasan & Bergerak - Untuk pekerja meja yang sering melancong, penyelia, atau kerja tangan ringan tanpa mesin berat. (cth., Ejen Jualan, Ejen Hartanah, Jururawat)">ℹ️</span>
+                        </button>
+                        <button type="button" class="option-btn" data-field="occupation" data-value="class3" data-en="Class 3" data-my="Kelas 3">
+                            Class 3
+                            <span class="info-icon" data-info-en="Skilled Trade & Light Machinery - For hands-on jobs using basic tools, light machinery, or kitchen equipment. (e.g., Chef, Technician, Plumber, Mechanic)" data-info-my="Kemahiran Tukang & Mesin Ringan - Untuk kerja tangan menggunakan alat asas, mesin ringan, atau peralatan dapur. (cth., Chef, Teknikal, Paip, Mekanik)">ℹ️</span>
+                        </button>
+                        <button type="button" class="option-btn" data-field="occupation" data-value="class4" data-en="Class 4" data-my="Kelas 4">
+                            Class 4
+                            <span class="info-icon" data-info-en="Heavy Labor & High-Risk - For heavy manual labor, operating big machinery, or working in dangerous environments. (e.g., Construction Worker, Site Welder, Crane Operator)" data-info-my="Buruh Berat & Berisiko Tinggi - Untuk buruh manual berat, mengendalikan mesin besar, atau bekerja di persekitaran berbahaya. (cth., Pekerja Pembinaan, Kimpalan Tapak, Operator Kren)">ℹ️</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Age Range -->
+                <div class="form-group">
+                    <label class="form-label" data-en="🎂 Age Range *" data-my="🎂 Julat Umur *">🎂 Age Range *</label>
+                    <div class="button-group age-group">
+                        <button type="button" class="option-btn" data-field="age" data-value="0-5">0-5</button>
+                        <button type="button" class="option-btn" data-field="age" data-value="6-10">6-10</button>
+                        <button type="button" class="option-btn" data-field="age" data-value="11-15">11-15</button>
+                        <button type="button" class="option-btn" data-field="age" data-value="16-20">16-20</button>
+                        <button type="button" class="option-btn" data-field="age" data-value="21-25">21-25</button>
+                        <button type="button" class="option-btn" data-field="age" data-value="26-30">26-30</button>
+                        <button type="button" class="option-btn" data-field="age" data-value="31-35">31-35</button>
+                        <button type="button" class="option-btn" data-field="age" data-value="36-40">36-40</button>
+                        <button type="button" class="option-btn" data-field="age" data-value="41-45">41-45</button>
+                        <button type="button" class="option-btn" data-field="age" data-value="46-50">46-50</button>
+                        <button type="button" class="option-btn" data-field="age" data-value="51-55">51-55</button>
+                        <button type="button" class="option-btn" data-field="age" data-value="56-60">56-60</button>
+                        <button type="button" class="option-btn" data-field="age" data-value="60+">60+</button>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn" data-en="🚀 SECURE MY SPOT NOW!" data-my="🚀 DAPATKAN TEMPAT SAYA SEKARANG!">🚀 SECURE MY SPOT NOW!</button>
+            </form>
+
+            <!-- Contact Information -->
+            <div class="contact-section">
+                <h3 class="contact-title" data-en="📞 Contact Abang" data-my="📞 Hubungi Abang">📞 Contact Abang</h3>
+                <div class="contact-info">
+                    <!-- <p class="contact-item">📱 <strong>WhatsApp:</strong> +60 1111909490</p>
+                    <p class="contact-item">📧 <strong>Email:</strong> deanieskandar96@gmail.com</p>
+                    <p class="contact-item">🏢 <strong>Office:</strong> Kuala Lumpur, Malaysia</p> -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p data-en="© 2026 Special Offer. All rights reserved." data-my="© 2024 Tawaran Khas. Hak cipta terpelihara.">© 2024 Special Offer. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">✅</div>
+            <h2 class="modal-title" data-en="Success!" data-my="Berjaya!">Success!</h2>
+            <p class="modal-text" data-en="Your spot has been secured! We'll contact you shortly." data-my="Tempat anda telah diperoleh! Kami akan menghubungi anda tidak lama lagi.">Your spot has been secured! We'll contact you shortly.</p>
+            <button class="modal-close" data-en="Close" data-my="Tutup">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
