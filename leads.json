@@ -7,5 +7,32 @@
     "age": "21-25",
     "id": 1783741230055,
     "timestamp": "2026-07-11T03:40:30.055Z"
+  },
+  {
+    "phone": "01111615516",
+    "gender": "male",
+    "smoking": "yes",
+    "occupation": "safe",
+    "age": "26-30",
+    "id": 1783765931674,
+    "timestamp": "2026-07-11T10:32:11.674Z"
+  },
+  {
+    "phone": "01932093200932029",
+    "gender": "female",
+    "smoking": "no",
+    "occupation": "hazardous",
+    "age": "0-5",
+    "id": 1783766018212,
+    "timestamp": "2026-07-11T10:33:38.212Z"
+  },
+  {
+    "phone": "0987654322",
+    "gender": "female",
+    "smoking": "yes",
+    "occupation": "Class 1",
+    "age": "60+",
+    "id": 1783766527084,
+    "timestamp": "2026-07-11T10:42:07.084Z"
   }
 ]

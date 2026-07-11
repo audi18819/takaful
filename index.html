@@ -11,7 +11,7 @@
         <!-- Header with toggles -->
         <header class="header">
             <div class="header-left">
-                <h1 class="logo">July Special Offer!</h1>
+                <h1 class="logo" id="logoText" data-en="Special Offer!" data-my="Tawaran Istimewa!">Special Offer!</h1>
             </div>
             <div class="header-right">
                 <button id="langToggle" class="toggle-btn">🌐 EN/MY</button>
@@ -87,19 +87,19 @@
                     <div class="button-group">
                         <button type="button" class="option-btn" data-field="occupation" data-value="Class 1" data-en="Class 1" data-my="Kelas 1">
                             Class 1
-                            <span class="info-icon" data-info-en="Desk & Office Work..." data-info-my="Kerja Meja & Pejabat...">ℹ️</span>
+                            <span class="info-icon" data-info-en="Desk & Office Work - For those who work solely at a desk, in an office, or from home with zero manual labor. (e.g., Accountant, Teacher, Admin, Manager)" data-info-my="Kerja Meja & Pejabat - Untuk mereka yang bekerja sepenuhnya di meja, di pejabat, atau dari rumah tanpa kerja manual. (cth., Akauntan, Guru, Admin, Pengurus)">ℹ️</span>
                         </button>
                         <button type="button" class="option-btn" data-field="occupation" data-value="Class 2" data-en="Class 2" data-my="Kelas 2">
                             Class 2
-                            <span class="info-icon" data-info-en="Supervisory & On-the-Go..." data-info-my="Pengawasan & Bergerak...">ℹ️</span>
+                            <span class="info-icon" data-info-en="Supervisory & On-the-Go - For desk workers who travel often, supervisors, or light hands-on work without heavy machinery. (e.g., Sales Agent, Real Estate Agent, Nurse)" data-info-my="Pengawasan & Bergerak - Untuk pekerja meja yang sering melancong, penyelia, atau kerja tangan ringan tanpa mesin berat. (cth., Ejen Jualan, Ejen Hartanah, Jururawat)">ℹ️</span>
                         </button>
                         <button type="button" class="option-btn" data-field="occupation" data-value="Class 3" data-en="Class 3" data-my="Kelas 3">
                             Class 3
-                            <span class="info-icon" data-info-en="Skilled Trade & Light Machinery..." data-info-my="Kemahiran Tukang & Mesin Ringan...">ℹ️</span>
+                            <span class="info-icon" data-info-en="Skilled Trade & Light Machinery - For hands-on jobs using basic tools, light machinery, or kitchen equipment. (e.g., Chef, Technician, Plumber, Mechanic)" data-info-my="Kemahiran Tukang & Mesin Ringan - Untuk kerja tangan menggunakan alat asas, mesin ringan, atau peralatan dapur. (cth., Chef, Teknikal, Paip, Mekanik)">ℹ️</span>
                         </button>
                         <button type="button" class="option-btn" data-field="occupation" data-value="Class 4" data-en="Class 4" data-my="Kelas 4">
                             Class 4
-                            <span class="info-icon" data-info-en="Heavy Labor & High-Risk..." data-info-my="Buruh Berat & Berisiko Tinggi...">ℹ️</span>
+                            <span class="info-icon" data-info-en="Heavy Labor & High-Risk - For heavy manual labor, operating big machinery, or working in dangerous environments. (e.g., Construction Worker, Site Welder, Crane Operator)" data-info-my="Buruh Berat & Berisiko Tinggi - Untuk buruh manual berat, mengendalikan mesin besar, atau bekerja di persekitaran berbahaya. (cth., Pekerja Pembinaan, Kimpalan Tapak, Operator Kren)">ℹ️</span>
                         </button>
                     </div>
                 </div>
@@ -132,10 +132,10 @@
             </form>
 
             <!-- Contact Information -->
-            <div class="contact-section">
+            <!-- <div class="contact-section">
                 <h3 class="contact-title" data-en="📞 Contact Abang" data-my="📞 Hubungi Abang">📞 Contact Abang</h3>
                 <div class="contact-info"></div>
-            </div>
+            </div> -->
         </main>
 
         <!-- Footer -->
@@ -245,5 +245,33 @@
             document.getElementById('successModal').style.display = 'none';
         });
     </script>
+    <script>
+    // Configuration for languages
+    const monthNamesEn = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const monthNamesMy = ["Januari", "Februari", "Mac", "April", "Mei", "Jun", "Julai", "Ogos", "September", "Oktober", "November", "Disember"];
+    
+    let currentLang = 'en'; // Default
+
+    function updateLogo() {
+        const logo = document.getElementById('logoText');
+        const monthIndex = new Date().getMonth();
+        
+        // Build the string based on language
+        if (currentLang === 'en') {
+            logo.textContent = `${monthNamesEn[monthIndex]} ${logo.getAttribute('data-en')}`;
+        } else {
+            logo.textContent = `${monthNamesMy[monthIndex]} ${logo.getAttribute('data-my')}`;
+        }
+    }
+
+    // Connect to your existing langToggle button
+    document.getElementById('langToggle').addEventListener('click', () => {
+        currentLang = (currentLang === 'en') ? 'my' : 'en';
+        updateLogo();
+    });
+
+    // Run once on page load
+    updateLogo();
+</script>
 </body>
 </html>
