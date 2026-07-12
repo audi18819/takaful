@@ -14,20 +14,8 @@
                 <h1 class="logo" id="logoText" data-en="Special Offer!" data-my="Tawaran Istimewa!">Special Offer!</h1>
             </div>
             <div class="header-right">
-                <button id="langToggle" class="toggle-btn">🌐 EN/MY</button>
-                <button id="themeToggle" class="toggle-btn">
-                    <svg class="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
+                <button id="langToggle" class="toggle-btn">EN</button>
+                <button id="themeToggle" class="toggle-btn">☀︎</button>
             </div>
         </header>
 
@@ -51,8 +39,8 @@
         <!-- Main Content -->
         <main class="main-content">
             <div class="hero-section">
-                <h2 class="hero-title" data-en="Don't Miss Out on This Exclusive Opportunity!" data-my="Jangan Terlepas Peluang Eksklusif Ini!">Don't Miss Out on This Exclusive Opportunity!</h2>
-                <p class="hero-subtitle" data-en="Secure your spot now before it's too late. Limited availability!" data-my="Tempat anda sekarang sebelum terlambat. Ketersediaan terhad!">Secure your spot now before it's too late. Limited availability!</p>
+                <h2 class="hero-title" data-en="Don't Miss Out On This Exclusive Opportunity!" data-my="Jangan Terlepas Peluang Eksklusif Ini!">Don't Miss Out on This Exclusive Opportunity!</h2>
+                <p class="hero-subtitle" data-en="Secure your spot now before it's too late. Limited availability!" data-my="Dapatkan tempat anda sekarang sebelum terlambat. Ketersediaan terhad!">Secure your spot now before it's too late. Limited availability!</p>
             </div>
 
             <!-- Form Section -->
@@ -140,7 +128,7 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <p data-en="© 2026 Special Offer. All rights reserved." data-my="© 2024 Tawaran Khas. Hak cipta terpelihara.">© 2026 Special Offer. All rights reserved.</p>
+            <p data-en="© 2026 Special Offer. All rights reserved." data-my="© 2026 Tawaran Khas. Hak cipta terpelihara.">© 2026 Special Offer. All rights reserved.</p>
         </footer>
     </div>
 
@@ -245,33 +233,5 @@
             document.getElementById('successModal').style.display = 'none';
         });
     </script>
-    <script>
-    // Configuration for languages
-    const monthNamesEn = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    const monthNamesMy = ["Januari", "Februari", "Mac", "April", "Mei", "Jun", "Julai", "Ogos", "September", "Oktober", "November", "Disember"];
-    
-    let currentLang = 'en'; // Default
-
-    function updateLogo() {
-        const logo = document.getElementById('logoText');
-        const monthIndex = new Date().getMonth();
-        
-        // Build the string based on language
-        if (currentLang === 'en') {
-            logo.textContent = `${monthNamesEn[monthIndex]} ${logo.getAttribute('data-en')}`;
-        } else {
-            logo.textContent = `${monthNamesMy[monthIndex]} ${logo.getAttribute('data-my')}`;
-        }
-    }
-
-    // Connect to your existing langToggle button
-    document.getElementById('langToggle').addEventListener('click', () => {
-        currentLang = (currentLang === 'en') ? 'my' : 'en';
-        updateLogo();
-    });
-
-    // Run once on page load
-    updateLogo();
-</script>
 </body>
 </html>

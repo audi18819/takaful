@@ -9,6 +9,12 @@ let formData = {
     age: ''
 };
 
+// Month names in English and Malay
+const monthNames = {
+    en: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    my: ['Januari', 'Februari', 'Mac', 'April', 'Mei', 'Jun', 'Julai', 'Ogos', 'September', 'Oktober', 'November', 'Disember']
+};
+
 // DOM Elements
 const themeToggle = document.getElementById('themeToggle');
 const langToggle = document.getElementById('langToggle');
@@ -26,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSpotsCounter();
     initButtonSelection();
     initInfoIcons();
+    updateLogoWithMonth();
 });
 
 // Theme Toggle
@@ -43,6 +50,8 @@ themeToggle.addEventListener('click', () => {
 
 function applyTheme() {
     document.body.className = currentTheme === 'light' ? 'light-mode' : 'dark-mode';
+    // Update theme toggle emoji
+    themeToggle.textContent = currentTheme === 'light' ? '☀︎' : '⏾';
 }
 
 // Language Toggle
@@ -80,6 +89,12 @@ function applyLanguage() {
             }
         }
     });
+    
+    // Update language toggle button text
+    langToggle.textContent = currentLang === 'en' ? 'EN' : 'MY';
+    
+    // Update logo with current month in the correct language
+    updateLogoWithMonth();
     
     // Close any open tooltips when language changes
     document.querySelectorAll('.info-tooltip').forEach(tooltip => {
@@ -151,16 +166,24 @@ function initButtonSelection() {
             const field = btn.getAttribute('data-field');
             const value = btn.getAttribute('data-value');
 
-            // Remove selected class from all buttons in the same group
-            document.querySelectorAll(`[data-field="${field}"]`).forEach(b => {
-                b.classList.remove('selected');
-            });
+            // Check if button is already selected
+            if (btn.classList.contains('selected')) {
+                // Unselect the button
+                btn.classList.remove('selected');
+                // Clear form data for this field
+                formData[field] = '';
+            } else {
+                // Remove selected class from all buttons in the same group
+                document.querySelectorAll(`[data-field="${field}"]`).forEach(b => {
+                    b.classList.remove('selected');
+                });
 
-            // Add selected class to clicked button
-            btn.classList.add('selected');
+                // Add selected class to clicked button
+                btn.classList.add('selected');
 
-            // Update form data
-            formData[field] = value;
+                // Update form data
+                formData[field] = value;
+            }
         });
     });
 }
@@ -316,3 +339,20 @@ successModal.addEventListener('click', (e) => {
         successModal.classList.remove('active');
     }
 });
+
+// Update Logo with Current Month
+function updateLogoWithMonth() {
+    const logoText = document.getElementById('logoText');
+    const currentMonthIndex = new Date().getMonth();
+    const monthName = monthNames[currentLang][currentMonthIndex];
+    
+    if (currentLang === 'en') {
+        logoText.textContent = `${monthName} Special Offer!`;
+        logoText.setAttribute('data-en', `${monthName} Special Offer!`);
+        logoText.setAttribute('data-my', `Tawaran Istimewa ${monthNames.my[currentMonthIndex]}!`);
+    } else {
+        logoText.textContent = `Tawaran Istimewa ${monthName}!`;
+        logoText.setAttribute('data-en', `${monthNames.en[currentMonthIndex]} Special Offer!`);
+        logoText.setAttribute('data-my', `Tawaran Istimewa ${monthName}!`);
+    }
+}
