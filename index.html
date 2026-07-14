@@ -47,13 +47,13 @@
             <form id="leadForm" class="lead-form">
                 <!-- Phone Number -->
                 <div class="form-group">
-                    <label class="form-label" data-en="📱 Phone Number *" data-my="📱 Nombor Telefon *">📱 Phone Number *</label>
+                    <label class="form-label" data-en="📱 Phone Number " data-my="📱 Nombor Telefon ">📱 Phone Number *</label>
                     <input type="tel" id="phone" class="form-input" placeholder="+60 12-345-6789" required>
                 </div>
 
                 <!-- Gender -->
                 <div class="form-group">
-                    <label class="form-label" data-en="👤 Gender *" data-my="👤 Jantina *">👤 Gender *</label>
+                    <label class="form-label" data-en="👤 Gender " data-my="👤 Jantina ">👤 Gender *</label>
                     <div class="button-group">
                         <button type="button" class="option-btn" data-field="gender" data-value="male" data-en="Male" data-my="Lelaki">Male</button>
                         <button type="button" class="option-btn" data-field="gender" data-value="female" data-en="Female" data-my="Perempuan">Female</button>
@@ -62,7 +62,7 @@
 
                 <!-- Smoking Status -->
                 <div class="form-group">
-                    <label class="form-label" data-en="🚬 Do You Smoke? *" data-my="🚬 Adakah Anda Merokok? *">🚬 Do You Smoke? *</label>
+                    <label class="form-label" data-en="🚬 Do You Smoke? " data-my="🚬 Adakah Anda Merokok? ">🚬 Do You Smoke? *</label>
                     <div class="button-group">
                         <button type="button" class="option-btn" data-field="smoking" data-value="yes" data-en="Yes" data-my="Ya">Yes</button>
                         <button type="button" class="option-btn" data-field="smoking" data-value="no" data-en="No" data-my="Tidak">No</button>
@@ -71,45 +71,50 @@
 
                 <!-- Occupation Category -->
                 <div class="form-group">
-                    <label class="form-label" data-en="💼 Occupation Type *" data-my="💼 Jenis Pekerjaan *">💼 Occupation Type *</label>
-                    <div class="button-group">
-                        <button type="button" class="option-btn" data-field="occupation" data-value="Class 1" data-en="Class 1" data-my="Kelas 1">
-                            Class 1
-                            <span class="info-icon" data-info-en="Desk & Office Work - For those who work solely at a desk, in an office, or from home with zero manual labor. (e.g., Accountant, Teacher, Admin, Manager)" data-info-my="Kerja Meja & Pejabat - Untuk mereka yang bekerja sepenuhnya di meja, di pejabat, atau dari rumah tanpa kerja manual. (cth., Akauntan, Guru, Admin, Pengurus)">ℹ️</span>
-                        </button>
-                        <button type="button" class="option-btn" data-field="occupation" data-value="Class 2" data-en="Class 2" data-my="Kelas 2">
-                            Class 2
-                            <span class="info-icon" data-info-en="Supervisory & On-the-Go - For desk workers who travel often, supervisors, or light hands-on work without heavy machinery. (e.g., Sales Agent, Real Estate Agent, Nurse)" data-info-my="Pengawasan & Bergerak - Untuk pekerja meja yang sering melancong, penyelia, atau kerja tangan ringan tanpa mesin berat. (cth., Ejen Jualan, Ejen Hartanah, Jururawat)">ℹ️</span>
-                        </button>
-                        <button type="button" class="option-btn" data-field="occupation" data-value="Class 3" data-en="Class 3" data-my="Kelas 3">
-                            Class 3
-                            <span class="info-icon" data-info-en="Skilled Trade & Light Machinery - For hands-on jobs using basic tools, light machinery, or kitchen equipment. (e.g., Chef, Technician, Plumber, Mechanic)" data-info-my="Kemahiran Tukang & Mesin Ringan - Untuk kerja tangan menggunakan alat asas, mesin ringan, atau peralatan dapur. (cth., Chef, Teknikal, Paip, Mekanik)">ℹ️</span>
-                        </button>
-                        <button type="button" class="option-btn" data-field="occupation" data-value="Class 4" data-en="Class 4" data-my="Kelas 4">
-                            Class 4
-                            <span class="info-icon" data-info-en="Heavy Labor & High-Risk - For heavy manual labor, operating big machinery, or working in dangerous environments. (e.g., Construction Worker, Site Welder, Crane Operator)" data-info-my="Buruh Berat & Berisiko Tinggi - Untuk buruh manual berat, mengendalikan mesin besar, atau bekerja di persekitaran berbahaya. (cth., Pekerja Pembinaan, Kimpalan Tapak, Operator Kren)">ℹ️</span>
-                        </button>
-                    </div>
+                    <label class="form-label">
+                        <span data-en="💼 Occupation Type " data-my="💼 Jenis Pekerjaan ">💼 Occupation Type *</span>
+                        <span class="info-icon" id="occupationInfoIcon" data-info-en="Class 1: Desk & Office Work - For those who work solely at a desk, in an office, or from home with zero manual labor. (e.g., Accountant, Teacher, Admin, Manager)
+
+Class 2: Supervisory & On-the-Go - For desk workers who travel often, supervisors, or light hands-on work without heavy machinery. (e.g., Sales Agent, Real Estate Agent, Nurse)
+
+Class 3: Skilled Trade & Light Machinery - For hands-on jobs using basic tools, light machinery, or kitchen equipment. (e.g., Chef, Technician, Plumber, Mechanic)
+
+Class 4: Heavy Labor & High-Risk - For heavy manual labor, operating big machinery, or working in dangerous environments. (e.g., Construction Worker, Site Welder, Crane Operator)" data-info-my="Kelas 1: Kerja Meja & Pejabat - Untuk mereka yang bekerja sepenuhnya di meja, di pejabat, atau dari rumah tanpa kerja manual. (cth., Akauntan, Guru, Admin, Pengurus)
+
+Kelas 2: Pengawasan & Bergerak - Untuk pekerja meja yang sering melancong, penyelia, atau kerja tangan ringan tanpa mesin berat. (cth., Ejen Jualan, Ejen Hartanah, Jururawat)
+
+Kelas 3: Kemahiran Tukang & Mesin Ringan - Untuk kerja tangan menggunakan alat asas, mesin ringan, atau peralatan dapur. (cth., Chef, Teknikal, Paip, Mekanik)
+
+Kelas 4: Buruh Berat & Berisiko Tinggi - Untuk buruh manual berat, mengendalikan mesin besar, atau bekerja di persekitaran berbahaya. (cth., Pekerja Pembinaan, Kimpalan Tapak, Operator Kren)">ⓘ</span>
+                    </label>
+                    <select id="occupation" class="form-select" data-field="occupation" required>
+                        <option value="" data-en="Select Occupation Type" data-my="Pilih Jenis Pekerjaan">Select Occupation Type</option>
+                        <option value="Class 1" data-en="Class 1" data-my="Kelas 1">Class 1</option>
+                        <option value="Class 2" data-en="Class 2" data-my="Kelas 2">Class 2</option>
+                        <option value="Class 3" data-en="Class 3" data-my="Kelas 3">Class 3</option>
+                        <option value="Class 4" data-en="Class 4" data-my="Kelas 4">Class 4</option>
+                    </select>
                 </div>
 
                 <!-- Age Range -->
                 <div class="form-group">
-                    <label class="form-label" data-en="🎂 Age Range *" data-my="🎂 Julat Umur *">🎂 Age Range *</label>
-                    <div class="button-group age-group">
-                        <button type="button" class="option-btn" data-field="age" data-value="0-5">0-5</button>
-                        <button type="button" class="option-btn" data-field="age" data-value="6-10">6-10</button>
-                        <button type="button" class="option-btn" data-field="age" data-value="11-15">11-15</button>
-                        <button type="button" class="option-btn" data-field="age" data-value="16-20">16-20</button>
-                        <button type="button" class="option-btn" data-field="age" data-value="21-25">21-25</button>
-                        <button type="button" class="option-btn" data-field="age" data-value="26-30">26-30</button>
-                        <button type="button" class="option-btn" data-field="age" data-value="31-35">31-35</button>
-                        <button type="button" class="option-btn" data-field="age" data-value="36-40">36-40</button>
-                        <button type="button" class="option-btn" data-field="age" data-value="41-45">41-45</button>
-                        <button type="button" class="option-btn" data-field="age" data-value="46-50">46-50</button>
-                        <button type="button" class="option-btn" data-field="age" data-value="51-55">51-55</button>
-                        <button type="button" class="option-btn" data-field="age" data-value="56-60">56-60</button>
-                        <button type="button" class="option-btn" data-field="age" data-value="60+">60+</button>
-                    </div>
+                    <label class="form-label" data-en="🎂 Age Range " data-my="🎂 Julat Umur ">🎂 Age Range *</label>
+                    <select id="age" class="form-select" data-field="age" required>
+                        <option value="" data-en="Select Age Range" data-my="Pilih Julat Umur">Select Age Range</option>
+                        <option value="0-5">0-5</option>
+                        <option value="6-10">6-10</option>
+                        <option value="11-15">11-15</option>
+                        <option value="16-20">16-20</option>
+                        <option value="21-25">21-25</option>
+                        <option value="26-30">26-30</option>
+                        <option value="31-35">31-35</option>
+                        <option value="36-40">36-40</option>
+                        <option value="41-45">41-45</option>
+                        <option value="46-50">46-50</option>
+                        <option value="51-55">51-55</option>
+                        <option value="56-60">56-60</option>
+                        <option value="60+">60+</option>
+                    </select>
                 </div>
 
                 <!-- Error Message Container (Hidden by default) -->

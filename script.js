@@ -21,6 +21,8 @@ const langToggle = document.getElementById('langToggle');
 const form = document.getElementById('leadForm');
 const phoneInput = document.getElementById('phone');
 const optionBtns = document.querySelectorAll('.option-btn');
+const occupationSelect = document.getElementById('occupation');
+const ageSelect = document.getElementById('age');
 const successModal = document.getElementById('successModal');
 const modalClose = document.querySelector('.modal-close');
 
@@ -31,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCountdown();
     initSpotsCounter();
     initButtonSelection();
+    initDropdowns();
     initInfoIcons();
     updateLogoWithMonth();
 });
@@ -74,6 +77,8 @@ function applyLanguage() {
         if (text) {
             if (el.tagName === 'INPUT' && el.hasAttribute('placeholder')) {
                 el.placeholder = text;
+            } else if (el.tagName === 'OPTION') {
+                el.textContent = text;
             } else {
                 // Check if element has an info-icon child to preserve it
                 const infoIcon = el.querySelector('.info-icon');
@@ -188,6 +193,21 @@ function initButtonSelection() {
     });
 }
 
+// Dropdown Selection
+function initDropdowns() {
+    if (occupationSelect) {
+        occupationSelect.addEventListener('change', (e) => {
+            formData.occupation = e.target.value;
+        });
+    }
+
+    if (ageSelect) {
+        ageSelect.addEventListener('change', (e) => {
+            formData.age = e.target.value;
+        });
+    }
+}
+
 // Info Icons
 function initInfoIcons() {
     const infoIcons = document.querySelectorAll('.info-icon');
@@ -241,6 +261,14 @@ phoneInput.addEventListener('input', (e) => {
 // Form Submission
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    // Get values from dropdowns
+    if (occupationSelect) {
+        formData.occupation = occupationSelect.value;
+    }
+    if (ageSelect) {
+        formData.age = ageSelect.value;
+    }
 
     // Validation
     if (!formData.phone) {
